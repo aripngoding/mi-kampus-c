@@ -1,8 +1,8 @@
 [build]
-builder = "railpack"
+builder = "dockerfile"
+dockerfilePath = "Dockerfile"
 
 [deploy]
-startCommand = "php artisan storage:link; php artisan migrate --force; php artisan db:seed --class=AdminSeeder --force; /start-container.sh"
 healthcheckPath = "/"
 healthcheckTimeout = 300
 restartPolicyType = "on_failure"
