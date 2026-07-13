@@ -1,0 +1,831 @@
+================================================================================
+                                                                                
+        DOKUMENTASI LENGKAP PROYEK                                              
+        WEBSITE PROFIL & SISTEM PPDB ONLINE                                     
+        MADRASAH IBTIDAIYAH (MI) KAMPUS-C                                       
+                                                                                
+================================================================================
+
+Versi Dokumen   : 1.0
+Tanggal Dibuat  : Mei 2026
+Tech Stack      : Laravel 12, Filament PHP 3.2, MySQL, TailwindCSS
+Tema Desain     : Hijau & Putih
+
+
+================================================================================
+DAFTAR ISI
+================================================================================
+
+  1.  PENDAHULUAN
+  2.  LATAR BELAKANG & ALASAN PEMBUATAN WEBSITE
+  3.  TUJUAN PROYEK
+  4.  MANFAAT WEBSITE
+  5.  RUANG LINGKUP PROYEK
+  6.  TEKNOLOGI YANG DIGUNAKAN
+  7.  ARSITEKTUR SISTEM
+  8.  STRUKTUR DATABASE
+  9.  FITUR LENGKAP APLIKASI
+  10. STRUKTUR FOLDER PROYEK
+  11. ALUR KERJA SISTEM (FLOW)
+  12. PANDUAN INSTALASI
+  13. PANDUAN PENGGUNAAN
+  14. KEAMANAN SISTEM
+  15. PEMELIHARAAN (MAINTENANCE)
+  16. PENGEMBANGAN LANJUTAN
+  17. TROUBLESHOOTING
+  18. PENUTUP
+
+
+================================================================================
+1. PENDAHULUAN
+================================================================================
+
+Dokumen ini berisi penjelasan lengkap dan menyeluruh mengenai proyek
+pengembangan Website Profil dan Sistem Penerimaan Peserta Didik Baru (PPDB)
+Online untuk Madrasah Ibtidaiyah (MI) Kampus-C.
+
+Website ini dibangun untuk menjawab kebutuhan sekolah akan sarana informasi
+digital yang modern serta sistem pendaftaran siswa baru yang efisien,
+transparan, dan dapat diakses kapan saja dari mana saja.
+
+Dokumen ini ditujukan untuk:
+  - Pihak sekolah (kepala sekolah, admin, panitia PPDB)
+  - Pengembang (developer) yang akan memelihara atau mengembangkan sistem
+  - Pihak terkait lainnya yang membutuhkan pemahaman tentang sistem ini
+
+
+================================================================================
+2. LATAR BELAKANG & ALASAN PEMBUATAN WEBSITE
+================================================================================
+
+2.1. PERMASALAHAN YANG DIHADAPI
+-------------------------------------------------------------------------------
+
+Sebelum adanya website ini, MI Kampus-C menghadapi beberapa kendala:
+
+  a. KETERBATASAN INFORMASI PUBLIK
+     Informasi mengenai sekolah (profil, visi-misi, fasilitas, kegiatan)
+     hanya tersedia secara fisik atau dari mulut ke mulut. Calon wali murid
+     kesulitan mendapatkan informasi yang lengkap dan akurat tentang sekolah.
+
+  b. PROSES PPDB MASIH MANUAL
+     Pendaftaran peserta didik baru dilakukan secara manual dengan mengisi
+     formulir kertas. Hal ini menyebabkan:
+       - Calon wali murid harus datang langsung ke sekolah
+       - Antrian panjang pada masa pendaftaran
+       - Risiko kehilangan atau kerusakan berkas
+       - Sulit melakukan rekapitulasi data
+       - Proses verifikasi yang memakan waktu lama
+
+  c. PENGELOLAAN DATA YANG TIDAK EFISIEN
+     Data pendaftar tersimpan dalam bentuk kertas atau file terpisah,
+     sehingga sulit untuk dicari, difilter, dan dilaporkan.
+
+  d. KURANGNYA CITRA DIGITAL SEKOLAH
+     Di era digital, sekolah tanpa kehadiran online dianggap kurang
+     profesional dan kurang kredibel di mata masyarakat.
+
+2.2. SOLUSI YANG DITAWARKAN
+-------------------------------------------------------------------------------
+
+Website Profil & Sistem PPDB Online ini hadir sebagai solusi:
+
+  a. PUSAT INFORMASI DIGITAL
+     Menyediakan informasi lengkap tentang sekolah yang dapat diakses
+     24 jam dari perangkat apa pun (komputer, tablet, smartphone).
+
+  b. PENDAFTARAN ONLINE
+     Calon wali murid dapat mendaftarkan anak mereka kapan saja tanpa
+     harus datang ke sekolah, cukup mengisi formulir online.
+
+  c. MANAJEMEN DATA TERPUSAT
+     Semua data pendaftar tersimpan dalam database yang terstruktur,
+     mudah dicari, difilter, diverifikasi, dan dilaporkan.
+
+  d. PENINGKATAN CITRA SEKOLAH
+     Kehadiran website profesional meningkatkan kredibilitas dan daya
+     tarik sekolah di mata masyarakat.
+
+2.3. MENGAPA WEBSITE INI PENTING
+-------------------------------------------------------------------------------
+
+  - EFISIENSI WAKTU    : Mengurangi waktu proses pendaftaran dan verifikasi
+  - HEMAT BIAYA        : Mengurangi penggunaan kertas dan biaya operasional
+  - TRANSPARANSI       : Status pendaftaran dapat dipantau dengan jelas
+  - AKSESIBILITAS      : Dapat diakses kapan saja dan di mana saja
+  - PROFESIONALISME    : Meningkatkan citra sekolah di era digital
+  - AKURASI DATA       : Mengurangi kesalahan input dan kehilangan data
+
+
+================================================================================
+3. TUJUAN PROYEK
+================================================================================
+
+3.1. TUJUAN UMUM
+-------------------------------------------------------------------------------
+Membangun sistem informasi berbasis web yang mampu memberikan informasi
+publik tentang MI Kampus-C dan mendigitalisasi proses Penerimaan Peserta
+Didik Baru (PPDB).
+
+3.2. TUJUAN KHUSUS
+-------------------------------------------------------------------------------
+  a. Menyediakan platform informasi sekolah yang lengkap dan mudah diakses.
+  b. Mempermudah calon wali murid dalam melihat informasi dan mendaftar.
+  c. Mempermudah admin sekolah dalam mengelola data pendaftar.
+  d. Menyediakan dashboard statistik untuk pemantauan PPDB.
+  e. Menyediakan sistem manajemen konten (galeri) yang mudah digunakan.
+  f. Meningkatkan efisiensi dan transparansi proses PPDB.
+
+
+================================================================================
+4. MANFAAT WEBSITE
+================================================================================
+
+4.1. BAGI SEKOLAH
+-------------------------------------------------------------------------------
+  - Meningkatkan citra dan kredibilitas sekolah
+  - Mempermudah promosi dan penyebaran informasi
+  - Menghemat biaya operasional (kertas, tenaga)
+  - Memudahkan pengelolaan data pendaftar
+  - Mendapatkan laporan dan statistik secara real-time
+
+4.2. BAGI CALON WALI MURID
+-------------------------------------------------------------------------------
+  - Mudah mendapatkan informasi lengkap tentang sekolah
+  - Dapat mendaftar kapan saja tanpa datang ke sekolah
+  - Mendapatkan nomor registrasi sebagai bukti pendaftaran
+  - Proses pendaftaran yang cepat dan transparan
+
+4.3. BAGI ADMIN/PANITIA PPDB
+-------------------------------------------------------------------------------
+  - Data pendaftar terorganisir dengan baik
+  - Mudah melakukan verifikasi dan perubahan status
+  - Fitur filter dan pencarian yang memudahkan pekerjaan
+  - Dashboard statistik untuk pengambilan keputusan
+
+
+================================================================================
+5. RUANG LINGKUP PROYEK
+================================================================================
+
+5.1. HALAMAN PUBLIK (FRONTEND)
+-------------------------------------------------------------------------------
+  - Beranda (Home)
+  - Tentang Kami
+  - Visi & Misi
+  - Galeri
+  - Kontak
+  - PPDB Online (Formulir Pendaftaran)
+  - Halaman Sukses Pendaftaran
+
+5.2. PANEL ADMIN (BACKEND)
+-------------------------------------------------------------------------------
+  - Dashboard dengan statistik PPDB
+  - Manajemen Data Pendaftar PPDB
+  - Manajemen Konten Galeri
+
+5.3. DI LUAR RUANG LINGKUP (Tidak termasuk versi ini)
+-------------------------------------------------------------------------------
+  - Sistem pembayaran online
+  - Sistem ujian/tes masuk online
+  - Aplikasi mobile (Android/iOS)
+  - Integrasi dengan sistem akademik (e-learning)
+
+
+================================================================================
+6. TEKNOLOGI YANG DIGUNAKAN
+================================================================================
+
+6.1. BACKEND
+-------------------------------------------------------------------------------
+  - Laravel 12.40.2
+    Framework PHP modern yang powerful, aman, dan mudah dikembangkan.
+    Dipilih karena memiliki ekosistem lengkap, dokumentasi baik, dan
+    komunitas besar.
+
+  - PHP 8.2+
+    Bahasa pemrograman server-side yang menjadi dasar Laravel.
+
+6.2. ADMIN PANEL
+-------------------------------------------------------------------------------
+  - Filament PHP 3.2
+    Framework admin panel berbasis Laravel yang menyediakan antarmuka
+    administrasi modern, lengkap dengan tabel, form, filter, dan widget.
+    Dipilih karena dapat mempercepat pengembangan panel admin secara
+    signifikan tanpa mengorbankan fleksibilitas.
+
+6.3. DATABASE
+-------------------------------------------------------------------------------
+  - MySQL 8.0
+    Sistem manajemen basis data relasional yang andal dan banyak digunakan.
+    Dipilih karena gratis, stabil, dan kompatibel dengan XAMPP.
+
+6.4. FRONTEND
+-------------------------------------------------------------------------------
+  - TailwindCSS 3.4
+    Framework CSS utility-first untuk membangun antarmuka yang responsif
+    dan modern dengan cepat.
+
+  - Vite 6.0
+    Build tool modern untuk meng-compile dan mengoptimasi aset (CSS & JS).
+
+  - Blade Template Engine
+    Template engine bawaan Laravel untuk membuat tampilan dinamis.
+
+6.5. TOOLS PENDUKUNG
+-------------------------------------------------------------------------------
+  - Composer    : Dependency manager untuk PHP
+  - NPM/Node.js : Dependency manager untuk JavaScript
+  - Git         : Version control system
+  - XAMPP       : Paket server lokal (Apache, MySQL, PHP)
+
+
+================================================================================
+7. ARSITEKTUR SISTEM
+================================================================================
+
+7.1. POLA ARSITEKTUR
+-------------------------------------------------------------------------------
+Sistem ini menggunakan pola arsitektur MVC (Model-View-Controller) bawaan
+Laravel:
+
+  - MODEL      : Mengelola data dan logika bisnis (interaksi dengan database)
+  - VIEW       : Mengelola tampilan/antarmuka (file Blade & TailwindCSS)
+  - CONTROLLER : Mengelola alur logika antara Model dan View
+
+7.2. DIAGRAM ALUR DATA
+-------------------------------------------------------------------------------
+
+   [Pengguna/Browser]
+          |
+          v
+   [Routes (web.php)]  ----> Menentukan controller mana yang dipanggil
+          |
+          v
+   [Controller]  --------->  Memproses request, validasi, logika
+          |
+          v
+   [Model]  ------------->   Berinteraksi dengan Database (MySQL)
+          |
+          v
+   [View (Blade)]  ------>   Menampilkan hasil ke pengguna
+          |
+          v
+   [Pengguna/Browser]
+
+7.3. PEMBAGIAN AKSES
+-------------------------------------------------------------------------------
+
+  PUBLIK (Tanpa Login):
+    - Akses semua halaman frontend
+    - Mengisi formulir PPDB
+
+  ADMIN (Perlu Login):
+    - Akses panel admin (/admin)
+    - Kelola data PPDB
+    - Kelola galeri
+
+
+================================================================================
+8. STRUKTUR DATABASE
+================================================================================
+
+Database: mi_kampus_c
+
+8.1. TABEL: users
+-------------------------------------------------------------------------------
+Menyimpan data akun admin yang dapat mengakses panel administrasi.
+
+  KOLOM              TIPE            KETERANGAN
+  -----------------  --------------  ------------------------------------
+  id                 bigint          Primary key, auto increment
+  name               varchar(255)    Nama admin
+  email              varchar(255)    Email (unik, untuk login)
+  email_verified_at  timestamp       Waktu verifikasi email (nullable)
+  password           varchar(255)    Password (terenkripsi/hashed)
+  role               enum            'admin' atau 'superadmin'
+  remember_token     varchar(100)    Token "remember me" (nullable)
+  created_at         timestamp       Waktu data dibuat
+  updated_at         timestamp       Waktu data diperbarui
+
+8.2. TABEL: ppdb_registrations
+-------------------------------------------------------------------------------
+Menyimpan data pendaftar Penerimaan Peserta Didik Baru.
+
+  KOLOM                TIPE           KETERANGAN
+  -------------------  -------------  -----------------------------------
+  id                   bigint         Primary key, auto increment
+  registration_number  varchar(50)    Nomor registrasi unik
+                                      (Contoh: PPDB-2026-001)
+  student_name         varchar(255)   Nama lengkap siswa
+  nisn                 varchar(20)    Nomor Induk Siswa Nasional (opsional)
+  birth_place          varchar(100)   Tempat lahir
+  birth_date           date           Tanggal lahir
+  gender               enum           'L' (Laki-laki) / 'P' (Perempuan)
+  religion             varchar(50)    Agama (default: Islam)
+  previous_school      varchar(255)   Asal sekolah TK/RA (opsional)
+  parent_name          varchar(255)   Nama orang tua/wali
+  parent_phone         varchar(20)    Nomor telepon/WhatsApp
+  address              text           Alamat lengkap
+  status               enum           Status pendaftaran:
+                                       - pending  (Menunggu)
+                                       - verified (Terverifikasi)
+                                       - accepted (Diterima)
+                                       - rejected (Ditolak)
+  created_at           timestamp      Waktu pendaftaran
+  updated_at           timestamp      Waktu data diperbarui
+
+8.3. TABEL: galleries
+-------------------------------------------------------------------------------
+Menyimpan data foto galeri kegiatan sekolah.
+
+  KOLOM         TIPE            KETERANGAN
+  ------------  --------------  ---------------------------------------
+  id            bigint          Primary key, auto increment
+  title         varchar(255)    Judul foto
+  image_path    varchar(255)    Lokasi penyimpanan file foto
+  description   text            Deskripsi foto (opsional)
+  is_active     boolean         Status tampil/tidak (default: true)
+  created_at    timestamp       Waktu data dibuat
+  updated_at    timestamp       Waktu data diperbarui
+
+8.4. RELASI ANTAR TABEL
+-------------------------------------------------------------------------------
+Pada versi ini, ketiga tabel utama (users, ppdb_registrations, galleries)
+bersifat independen dan tidak memiliki relasi foreign key langsung satu
+sama lain. Setiap tabel berdiri sendiri sesuai fungsinya.
+
+
+================================================================================
+9. FITUR LENGKAP APLIKASI
+================================================================================
+
+9.1. FITUR HALAMAN PUBLIK (FRONTEND)
+-------------------------------------------------------------------------------
+
+  A. BERANDA (HOME)
+     - Hero banner dengan ajakan mendaftar PPDB
+     - Statistik sekolah (jumlah siswa, guru, tahun berdiri, kelulusan)
+     - Sambutan kepala sekolah
+     - Keunggulan sekolah (kurikulum, prestasi, guru)
+     - Preview galeri kegiatan terbaru
+     - Call-to-action (CTA) pendaftaran PPDB
+
+  B. TENTANG KAMI
+     - Sejarah singkat berdirinya sekolah
+     - Daftar fasilitas sekolah (8 fasilitas)
+     - Profil tenaga pendidik
+
+  C. VISI & MISI
+     - Visi sekolah
+     - 7 poin misi sekolah
+     - 4 tujuan madrasah (akademik, keagamaan, sosial, inovasi)
+
+  D. GALERI
+     - Tampilan grid foto kegiatan
+     - Fitur lightbox (perbesar foto saat diklik)
+     - Pagination (pembagian halaman)
+
+  E. KONTAK
+     - Informasi alamat lengkap
+     - Nomor telepon dan WhatsApp
+     - Alamat email
+     - Jam operasional
+     - Google Maps (peta lokasi)
+     - Link media sosial
+     - Tombol chat WhatsApp langsung
+
+  F. PPDB ONLINE
+     - Formulir pendaftaran lengkap, terdiri dari:
+       * Data Calon Siswa (nama, NISN, tempat/tanggal lahir, jenis
+         kelamin, agama, asal sekolah)
+       * Data Orang Tua/Wali (nama, telepon, alamat)
+     - Validasi input otomatis
+     - Pesan error yang jelas dalam Bahasa Indonesia
+
+  G. HALAMAN SUKSES PENDAFTARAN
+     - Menampilkan nomor registrasi unik
+     - Ringkasan data pendaftaran
+     - Petunjuk langkah selanjutnya
+
+9.2. FITUR PANEL ADMIN (FILAMENT)
+-------------------------------------------------------------------------------
+
+  A. DASHBOARD
+     - Widget statistik PPDB:
+       * Total Pendaftar
+       * Menunggu Verifikasi (pending)
+       * Terverifikasi (verified)
+       * Diterima (accepted)
+       * Ditolak (rejected)
+
+  B. MANAJEMEN PPDB
+     - Tabel data seluruh pendaftar
+     - Lihat detail pendaftar (View)
+     - Tambah pendaftar manual (Create)
+     - Edit data pendaftar (Edit)
+     - Hapus data pendaftar (Delete)
+     - Aksi Terima/Tolak pendaftar (individual)
+     - Aksi Terima/Tolak massal (bulk action)
+     - Filter berdasarkan status dan jenis kelamin
+     - Pencarian (search)
+     - Badge notifikasi jumlah pendaftar pending
+     - Nomor registrasi dibuat otomatis
+
+  C. MANAJEMEN GALERI
+     - Tabel data foto galeri
+     - Upload foto baru (dengan auto-resize)
+     - Edit data foto
+     - Hapus foto
+     - Toggle aktif/nonaktif (tampil di website atau tidak)
+     - Filter berdasarkan status aktif
+
+
+================================================================================
+10. STRUKTUR FOLDER PROYEK
+================================================================================
+
+mi-kampus-c/
+|
+|-- app/                          # Inti aplikasi
+|   |-- Filament/                 # Komponen panel admin
+|   |   |-- Pages/                # Halaman kustom (Dashboard)
+|   |   |-- Resources/            # Resource CRUD (PPDB, Galeri)
+|   |   `-- Widgets/              # Widget statistik
+|   |-- Http/
+|   |   `-- Controllers/          # Controller (Home, Ppdb)
+|   |-- Models/                   # Model (User, PpdbRegistration, Gallery)
+|   `-- Providers/                # Service provider
+|
+|-- bootstrap/                    # File bootstrap aplikasi
+|-- config/                       # File konfigurasi
+|
+|-- database/
+|   |-- migrations/               # File migrasi struktur database
+|   |-- seeders/                  # File seeder (data awal/admin)
+|   `-- mi_kampus_c.sql           # File SQL dump lengkap
+|
+|-- public/                       # Folder root publik (entry point)
+|   `-- storage/                  # Symlink ke storage (file upload)
+|
+|-- resources/
+|   |-- css/                      # File CSS (TailwindCSS)
+|   |-- js/                       # File JavaScript
+|   `-- views/                    # Template Blade
+|       |-- layouts/              # Layout utama (navbar, footer)
+|       |-- ppdb/                 # Halaman PPDB
+|       |-- home.blade.php        # Halaman beranda
+|       |-- about.blade.php       # Halaman tentang kami
+|       |-- visi-misi.blade.php   # Halaman visi misi
+|       |-- gallery.blade.php     # Halaman galeri
+|       `-- contact.blade.php     # Halaman kontak
+|
+|-- routes/
+|   `-- web.php                   # Definisi rute/URL aplikasi
+|
+|-- storage/                      # Penyimpanan file & log
+|   `-- app/public/               # File yang diupload (galeri)
+|
+|-- .env                          # Konfigurasi environment
+|-- composer.json                 # Daftar dependency PHP
+|-- package.json                  # Daftar dependency JavaScript
+|-- tailwind.config.js            # Konfigurasi TailwindCSS
+`-- vite.config.js                # Konfigurasi Vite
+
+
+================================================================================
+11. ALUR KERJA SISTEM (FLOW)
+================================================================================
+
+11.1. ALUR PENDAFTARAN PPDB (DARI SISI CALON WALI MURID)
+-------------------------------------------------------------------------------
+
+  1. Pengunjung membuka website (http://localhost:8000)
+  2. Klik menu "PPDB Online" atau tombol "Daftar PPDB"
+  3. Mengisi formulir pendaftaran:
+     - Data calon siswa
+     - Data orang tua/wali
+  4. Klik tombol "Kirim Pendaftaran"
+  5. Sistem memvalidasi data:
+     - Jika ada kesalahan -> tampilkan pesan error
+     - Jika valid -> lanjut ke langkah berikutnya
+  6. Sistem membuat nomor registrasi otomatis (PPDB-TAHUN-NOMOR)
+  7. Data tersimpan ke database dengan status "pending"
+  8. Pengguna diarahkan ke halaman sukses
+  9. Halaman sukses menampilkan nomor registrasi & ringkasan data
+  10. Pengguna mencatat nomor registrasi untuk verifikasi
+
+11.2. ALUR VERIFIKASI PPDB (DARI SISI ADMIN)
+-------------------------------------------------------------------------------
+
+  1. Admin login ke panel admin (http://localhost:8000/admin)
+  2. Melihat dashboard statistik pendaftar
+  3. Membuka menu "Data Pendaftar PPDB"
+  4. Melihat daftar pendaftar (default status: pending)
+  5. Membuka detail pendaftar untuk verifikasi data
+  6. Melakukan aksi:
+     - Terima (status -> accepted)
+     - Tolak (status -> rejected)
+     - Atau ubah status manual via Edit
+  7. Sistem memperbarui status di database
+  8. Panitia menghubungi pendaftar via telepon yang didaftarkan
+
+11.3. ALUR MANAJEMEN GALERI
+-------------------------------------------------------------------------------
+
+  1. Admin login ke panel admin
+  2. Membuka menu "Galeri Foto"
+  3. Klik "Tambah Foto"
+  4. Mengisi judul, upload foto, deskripsi
+  5. Mengatur status aktif/nonaktif
+  6. Simpan
+  7. Foto otomatis tampil di halaman galeri website (jika aktif)
+
+
+================================================================================
+12. PANDUAN INSTALASI
+================================================================================
+
+12.1. PERSYARATAN SISTEM
+-------------------------------------------------------------------------------
+  - PHP >= 8.2
+  - Composer
+  - Node.js & NPM
+  - MySQL/MariaDB
+  - XAMPP/WAMP/Laragon (untuk development lokal)
+
+12.2. LANGKAH INSTALASI
+-------------------------------------------------------------------------------
+
+  LANGKAH 1: Persiapan Database
+  -----------------------------
+  Buka phpMyAdmin (http://localhost/phpmyadmin), lalu buat database:
+
+      CREATE DATABASE mi_kampus_c
+      CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+  Atau import file: database/mi_kampus_c.sql
+
+  LANGKAH 2: Konfigurasi Environment
+  -----------------------------------
+  Pastikan file .env sudah sesuai:
+
+      APP_NAME="MI Kampus-C"
+      APP_URL=http://localhost:8000
+      DB_CONNECTION=mysql
+      DB_HOST=127.0.0.1
+      DB_PORT=3306
+      DB_DATABASE=mi_kampus_c
+      DB_USERNAME=root
+      DB_PASSWORD=
+
+  LANGKAH 3: Install Dependency PHP
+  ----------------------------------
+      composer install
+
+  LANGKAH 4: Generate Application Key
+  ------------------------------------
+      php artisan key:generate
+
+  LANGKAH 5: Install Filament
+  ----------------------------
+      composer require filament/filament:"^3.2" -W
+
+  LANGKAH 6: Aktifkan AdminPanelProvider
+  ---------------------------------------
+  Edit file bootstrap/providers.php, hapus tanda komentar (//) pada baris:
+      App\Providers\Filament\AdminPanelProvider::class,
+
+  LANGKAH 7: Jalankan Migrasi Database
+  -------------------------------------
+      php artisan migrate
+
+  LANGKAH 8: Jalankan Seeder (Buat Admin)
+  ----------------------------------------
+      php artisan db:seed
+
+  LANGKAH 9: Buat Storage Link
+  -----------------------------
+      php artisan storage:link
+
+  LANGKAH 10: Install Dependency JavaScript
+  ------------------------------------------
+      npm install
+
+  LANGKAH 11: Build Aset
+  -----------------------
+      npm run build
+
+  LANGKAH 12: Jalankan Server
+  ----------------------------
+      php artisan serve
+
+  Akses website di: http://localhost:8000
+
+12.3. CATATAN MASALAH SSL (XAMPP)
+-------------------------------------------------------------------------------
+Jika terjadi error "SSL certificate problem" saat menjalankan composer:
+
+  1. Download cacert.pem dari https://curl.se/ca/cacert.pem
+  2. Simpan ke C:\xampp\php\extras\ssl\cacert.pem
+  3. Edit C:\xampp\php\php.ini:
+       curl.cainfo = "C:\xampp\php\extras\ssl\cacert.pem"
+       openssl.cafile="C:\xampp\php\extras\ssl\cacert.pem"
+  4. Set juga di composer:
+       composer config --global cafile "C:\xampp\php\extras\ssl\cacert.pem"
+  5. Periksa juga apakah antivirus/firewall melakukan HTTPS scanning yang
+     dapat mengganggu koneksi SSL composer.
+
+
+================================================================================
+13. PANDUAN PENGGUNAAN
+================================================================================
+
+13.1. AKUN ADMIN DEFAULT
+-------------------------------------------------------------------------------
+  URL      : http://localhost:8000/admin
+  Email    : admin@mi-kampus-c.sch.id
+  Password : password
+  Role     : superadmin
+
+  PENTING: Segera ubah password default setelah login pertama kali!
+
+13.2. CARA MENGGUNAKAN PANEL ADMIN
+-------------------------------------------------------------------------------
+
+  MELIHAT STATISTIK:
+    Buka halaman utama panel admin (Dashboard) untuk melihat ringkasan
+    jumlah pendaftar berdasarkan status.
+
+  MENGELOLA PENDAFTAR PPDB:
+    1. Klik menu "Data Pendaftar PPDB"
+    2. Untuk melihat detail: klik ikon mata (View)
+    3. Untuk menerima: klik tombol "Terima"
+    4. Untuk menolak: klik tombol "Tolak"
+    5. Untuk mengedit: klik tombol "Edit"
+    6. Gunakan filter di kanan atas untuk menyaring data
+
+  MENGELOLA GALERI:
+    1. Klik menu "Galeri Foto"
+    2. Klik "Tambah Foto" untuk menambah
+    3. Isi judul, upload foto, deskripsi
+    4. Aktifkan toggle "Tampilkan di Website"
+    5. Klik "Create"
+
+13.3. CARA MENGGUNAKAN WEBSITE (PENGUNJUNG)
+-------------------------------------------------------------------------------
+  - Navigasi menggunakan menu di bagian atas
+  - Untuk mendaftar PPDB, klik menu "PPDB Online"
+  - Isi formulir dengan lengkap dan benar
+  - Simpan nomor registrasi yang muncul setelah pendaftaran berhasil
+
+
+================================================================================
+14. KEAMANAN SISTEM
+================================================================================
+
+Sistem ini telah menerapkan beberapa praktik keamanan:
+
+  - CSRF PROTECTION
+    Setiap form dilindungi token CSRF untuk mencegah serangan
+    Cross-Site Request Forgery.
+
+  - SQL INJECTION PREVENTION
+    Menggunakan Eloquent ORM dan query builder yang otomatis melakukan
+    parameter binding.
+
+  - XSS PROTECTION
+    Blade template engine otomatis melakukan escaping pada output.
+
+  - PASSWORD HASHING
+    Password admin disimpan dalam bentuk hash (bcrypt), bukan teks biasa.
+
+  - INPUT VALIDATION
+    Semua input form divalidasi sebelum diproses dan disimpan.
+
+  - ROLE-BASED ACCESS
+    Hanya pengguna dengan role admin/superadmin yang dapat mengakses
+    panel administrasi.
+
+  - FILE UPLOAD VALIDATION
+    Upload file dibatasi hanya untuk tipe gambar.
+
+REKOMENDASI KEAMANAN UNTUK PRODUCTION:
+  - Set APP_DEBUG=false
+  - Set APP_ENV=production
+  - Gunakan password yang kuat
+  - Aktifkan HTTPS/SSL
+  - Lakukan backup database secara berkala
+
+
+================================================================================
+15. PEMELIHARAAN (MAINTENANCE)
+================================================================================
+
+15.1. BACKUP DATABASE
+-------------------------------------------------------------------------------
+Lakukan backup database secara berkala melalui phpMyAdmin (Export) atau
+command line:
+
+    mysqldump -u root mi_kampus_c > backup_mi_kampus_c.sql
+
+15.2. MEMBERSIHKAN CACHE
+-------------------------------------------------------------------------------
+Jika terjadi perubahan konfigurasi atau perilaku aneh:
+
+    php artisan optimize:clear
+
+15.3. UPDATE DEPENDENCY
+-------------------------------------------------------------------------------
+Untuk memperbarui package (lakukan dengan hati-hati di production):
+
+    composer update
+    npm update
+
+15.4. MONITORING LOG
+-------------------------------------------------------------------------------
+Periksa log error aplikasi di:
+
+    storage/logs/laravel.log
+
+
+================================================================================
+16. PENGEMBANGAN LANJUTAN
+================================================================================
+
+Fitur yang dapat ditambahkan di masa depan:
+
+  - Notifikasi email otomatis untuk pendaftar
+  - Export data PPDB ke Excel/PDF
+  - Integrasi WhatsApp untuk notifikasi
+  - Sistem pembayaran online (jika ada biaya pendaftaran)
+  - Sistem tes/ujian masuk online
+  - Halaman berita/pengumuman
+  - Halaman prestasi siswa
+  - Kalender akademik
+  - Multi-bahasa (Indonesia/Inggris)
+  - Aplikasi mobile (Android/iOS)
+  - Dashboard analitik yang lebih lengkap
+
+
+================================================================================
+17. TROUBLESHOOTING
+================================================================================
+
+MASALAH: Error "SSL certificate problem"
+SOLUSI : Ikuti panduan di bagian 12.3, atau periksa antivirus/firewall.
+
+MASALAH: Error "Class 'Filament\...' not found"
+SOLUSI : Jalankan: composer require filament/filament:"^3.2" -W
+         Lalu: composer dump-autoload
+
+MASALAH: Error "SQLSTATE[HY000] [1049] Unknown database"
+SOLUSI : Buat database mi_kampus_c terlebih dahulu di MySQL.
+
+MASALAH: Error "No application encryption key"
+SOLUSI : Jalankan: php artisan key:generate
+
+MASALAH: Gambar galeri tidak muncul
+SOLUSI : Jalankan: php artisan storage:link
+
+MASALAH: Error "Failed opening required server.php"
+SOLUSI : Vendor folder tidak lengkap. Jalankan ulang: composer install
+
+MASALAH: CSS/tampilan tidak rapi
+SOLUSI : Jalankan: npm run build
+         Lalu: php artisan optimize:clear
+
+MASALAH: Error permission saat menulis file
+SOLUSI : Pastikan folder storage/ dan bootstrap/cache/ dapat ditulis.
+
+
+================================================================================
+18. PENUTUP
+================================================================================
+
+Website Profil & Sistem PPDB Online MI Kampus-C dibangun untuk menjawab
+kebutuhan sekolah akan sarana informasi digital dan sistem pendaftaran siswa
+yang modern, efisien, dan transparan.
+
+Dengan adanya sistem ini, diharapkan:
+  - Informasi sekolah dapat tersampaikan dengan baik kepada masyarakat
+  - Proses PPDB menjadi lebih mudah, cepat, dan terorganisir
+  - Citra dan kredibilitas sekolah meningkat di era digital
+  - Pengelolaan data menjadi lebih efisien dan akurat
+
+Dokumentasi ini diharapkan dapat membantu semua pihak dalam memahami,
+menggunakan, dan memelihara sistem dengan baik.
+
+Untuk pertanyaan atau bantuan teknis lebih lanjut, silakan merujuk pada
+dokumentasi tambahan:
+  - README.md
+  - QUICK_START.md
+  - INSTALASI_MANUAL.md
+  - PROJECT_SUMMARY.md
+
+--------------------------------------------------------------------------------
+              Dibuat dengan dedikasi untuk MI Kampus-C
+              Tech Stack: Laravel 12 + Filament PHP 3.2 + MySQL + TailwindCSS
+--------------------------------------------------------------------------------
+
+                           === AKHIR DOKUMEN ===
