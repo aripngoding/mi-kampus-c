@@ -1,28 +1,22 @@
 #!/bin/bash
+set -e
 
-# Railway injects $PORT, default to 8080 if not set
-export PORT=${PORT:-8080}
+echo "Starting container..."
 
-echo "Starting container on port $PORT"
+# Link storage
+php artisan storage:link 2>/dev/null || true
 
-# Update Apache to listen on $PORT
-sed -i "s/^Listen 80$/Listen ${PORT}/" /etc/apache2/ports.conf
-sed -i "s/<VirtualHost \*:80>/<VirtualHost *:${PORT}>/" /etc/apache2/sites-available/000-default.conf
-
-# Link storage (ignore errors)
-php artisan storage:link 2>/dev/null || echo "storage:link skipped"
-
-# Run migrations (with retry in case DB is slow to start)
+# Run migrations with retry (DB may be slow to start)
 echo "Running migrations..."
 for i in 1 2 3 4 5; do
     php artisan migrate --force && break
-    echo "Migration attempt $i failed, retrying in 5s..."
+    echo "Attempt $i failed, retrying in 5s..."
     sleep 5
 done
 
-# Seed admin user
+# Seed admin
 echo "Seeding admin..."
-php artisan db:seed --class=AdminSeeder --force 2>/dev/null || echo "Seeder skipped (may already exist)"
+php artisan db:seed --class=AdminSeeder --force 2>/dev/null || true
 
-echo "Starting Apache on port $PORT..."
+echo "Starting Apache on port 8080..."
 exec apache2-foreground
