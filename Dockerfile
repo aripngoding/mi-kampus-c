@@ -58,10 +58,10 @@ RUN php artisan config:cache \
     && php artisan route:cache \
     && php artisan view:cache
 
-EXPOSE 80
-
-# Start script
+# Copy start script
 COPY docker/start.sh /start.sh
 RUN chmod +x /start.sh
+
+EXPOSE 8080
 
 CMD ["/start.sh"]
