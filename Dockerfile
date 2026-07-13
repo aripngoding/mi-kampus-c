@@ -65,4 +65,7 @@ RUN chmod +x /start.sh
 
 EXPOSE 8080
 
+# Force rebuild trigger
+ARG BUILD_DATE=unknown
+
 CMD ["/start.sh"]
