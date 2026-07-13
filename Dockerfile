@@ -50,7 +50,7 @@ RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cac
     && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
 # Configure Apache
-RUN a2enmod rewrite
+RUN a2dismod mpm_event mpm_worker 2>/dev/null; a2enmod mpm_prefork rewrite
 COPY docker/apache.conf /etc/apache2/sites-available/000-default.conf
 
 # Cache Laravel config
