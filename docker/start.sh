@@ -1,12 +1,14 @@
 #!/bin/bash
 set -e
 
-echo "Starting container..."
+export PORT=${PORT:-8080}
+
+echo "Starting container on port $PORT..."
 
 # Link storage
 php artisan storage:link 2>/dev/null || true
 
-# Run migrations with retry (DB may be slow to start)
+# Run migrations with retry
 echo "Running migrations..."
 for i in 1 2 3 4 5; do
     php artisan migrate --force && break
@@ -18,5 +20,5 @@ done
 echo "Seeding admin..."
 php artisan db:seed --class=AdminSeeder --force 2>/dev/null || true
 
-echo "Starting Apache on port 8080..."
-exec apache2-foreground
+echo "Starting PHP server on port $PORT..."
+exec php -S 0.0.0.0:$PORT -t public
